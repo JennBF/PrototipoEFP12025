@@ -1,5 +1,4 @@
-//LUIS ANGEL MENDEZ FUENTES
-//9959-24-6845
+//JENNIFER BARRIOS FLORES 9959-24-10016
 // Inclusión de encabezados propios
 /**
  * @file MenuClientes.cpp
@@ -48,10 +47,10 @@ void MenuClientes::mostrar(vector<Clientes>& listaClientes, usuarios& usuarioAct
         cout << "--------------------------------------------------------------------------------\n";
         cout << "   Usuario actual: " << usuarioActual.getNombre() << "\n";
         cout << "--------------------------------------------------------------------------------\n";
-        cout << "   [1] Agregar cliente\n";
-        cout << "   [2] Mostrar clientes\n";
-        cout << "   [3] Modificar cliente\n";
-        cout << "   [4] Eliminar cliente\n";
+        cout << "   [1] Agregar Empleado\n";
+        cout << "   [2] Mostrar Empleados\n";
+        cout << "   [3] Modificar Empleado\n";
+        cout << "   [4] Eliminar Empleado\n";
         cout << "   [5] Volver al menu principal\n";
         cout << "--------------------------------------------------------------------------------\n";
         cout << "                     Seleccione una opcion: ";
@@ -131,3 +130,4 @@ void MenuClientes::mostrar(vector<Clientes>& listaClientes, usuarios& usuarioAct
 
     } while (opcion != 5);
 }
+
