@@ -46,6 +46,9 @@ void MenuClientes::mostrar(vector<Clientes>& listaClientes, usuarios& usuarioAct
         cout << "                        SISTEMA DE GESTION DE CLIENTES                          \n";
         cout << "--------------------------------------------------------------------------------\n";
         cout << "   Usuario actual: " << usuarioActual.getNombre() << "\n";
+        cout << "\t\t| CARNET: 9959-24-10016\n";
+        cout<< "\t\t| Nombre completo del programador:\n";
+        cout<< "\t\t| JENNIFER ALBA DAYAMI BARRIOS FLORES\n";
         cout << "--------------------------------------------------------------------------------\n";
         cout << "   [1] Agregar Empleado\n";
         cout << "   [2] Mostrar Empleados\n";

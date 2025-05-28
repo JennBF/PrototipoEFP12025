@@ -493,7 +493,7 @@
 	"pedidos.h"
 	"menuinformes.h"
 
-1748451889 c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\include\clientes.h
+1748453192 c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\include\clientes.h
 	<vector>
 	<string>
 
@@ -615,7 +615,7 @@
 	<set>
 	<cstring>
 
-1748451889 source:c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\src\clientes.cpp
+1748453192 source:c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\src\clientes.cpp
 	"clientes.h"
 	<iostream>
 	<algorithm>
@@ -752,7 +752,7 @@
 	<string>
 	<limits>
 
-1748451889 source:c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\src\menuprincipal.cpp
+1748453076 source:c:\users\50240\documents\programacion1\prototipoefp12025\tecnologycrud\logisticamenú_v2\src\menuprincipal.cpp
 	"menuprincipal.h"
 	"menuarchivo.h"
 	"menucatalogos.h"

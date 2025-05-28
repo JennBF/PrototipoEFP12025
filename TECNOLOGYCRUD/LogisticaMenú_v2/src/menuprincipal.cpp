@@ -25,14 +25,17 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
         system("cls");
 
         cout << "\t\t========================================\n"
-             << "\t\t|     SISTEMA TECNOLOGY     |\n"
+             << "\t\t|     SISTEMA DE GESTION LOGISTICA     |\n"
              << "\t\t========================================\n"
              << "\t\t| Usuario: " << usuarioActual.getNombre() << "\n"
-             << "\t\t================================================\n"
+             << "\t\t| CARNET: 9959-24-10016\n"
+             << "\t\t| Nombre completo del programador:\n"
+             << "\t\t| JENNIFER ALBA DAYAMI BARRIOS FLORES\n"
+             << "\t\t=========================================\n"
              << "\t\t 1. CATALOGOS\n"
              << "\t\t 2. INFORMES\n"
              << "\t\t 3. SEGURIDAD\n"
-             << "\t\t 4. Salir\n"
+             << "\t\t 4. SALIR\n"
              << "\t\t========================================\n"
              << "\t\tIngresa tu opcion: ";
 
@@ -43,7 +46,6 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
                 MenuCatalogos::mostrar(clientes, proveedores, productos,
                                      almacenes, administradores,
                                      transportistas, usuarioActual);
-                break;
 
             case 2:
                 MenuCatalogos::mostrar(clientes, proveedores, productos,
@@ -52,7 +54,7 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
                 break;
 
             case 3:
-                bitacora b;
+                 bitacora b;
                 b.menuBitacora();
                 break;
 
@@ -64,4 +66,3 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
         }
     } while(choice != 5);
 }
-

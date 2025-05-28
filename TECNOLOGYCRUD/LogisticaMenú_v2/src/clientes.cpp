@@ -1,5 +1,5 @@
-//LUIS ANGEL MENDEZ FUENTES
-//9959-24-6845
+//JENNIFER BARRIOS 9959-24-10016
+//28 DE MAYO 2025
 #include "clientes.h"
 #include <iostream>
 #include <algorithm>
@@ -70,12 +70,12 @@ void Clientes::agregar(std::vector<Clientes>& lista, const std::string& usuarioA
     // Genera un ID único para el nuevo cliente
     nuevo.id = generarIdUnico(lista);
     if (nuevo.id.empty()) {
-        std::cerr << "\n\t\tError: No hay codigos disponibles para nuevos clientes (rango lleno)\n";
+        std::cerr << "\n\t\tError: No hay codigos disponibles para nuevos Empleados (rango lleno)\n";
         system("pause");
         return;
     }
 
-    std::cout << "\n-------------------------- AGREGAR CLIENTE --------------------------\n";
+    std::cout << "\n-------------------------- AGREGAR EMPLEADO --------------------------\n";
     std::cout << std::left << std::setw(25) << "ID Asignado:" << nuevo.id << "\n";
     std::cout << "---------------------------------------------------------------------\n";
 
@@ -97,10 +97,10 @@ void Clientes::agregar(std::vector<Clientes>& lista, const std::string& usuarioA
     guardarEnArchivo(lista); // Guarda la lista actualizada de clientes
 
     // Registra la acción en la bitácora
-    bitacora::registrar(usuarioActual, "CLIENTES", "Cliente agregado - ID: " + nuevo.id);
+    bitacora::registrar(usuarioActual, "EMPLEADO", "Empleado agregado - ID: " + nuevo.id);
 
     // Mostrar reporte visual de un solo cliente
-    std::cout << "\n-------------------------- Cliente Registrado --------------------------\n";
+    std::cout << "\n-------------------------- Empleado Registrado --------------------------\n";
     std::cout << std::left << std::setw(15) << "ID"
               << std::setw(25) << "Nombre"
               << std::setw(20) << "NIT"
@@ -115,9 +115,9 @@ void Clientes::agregar(std::vector<Clientes>& lista, const std::string& usuarioA
     std::cout << "---------------------------------------------------------------------------\n";
 
     // Opcional: Guardar también en un archivo de reportes
-    std::ofstream reporteFile("clientes.txt", std::ios::app);
+    std::ofstream reporteFile("Empleados.txt", std::ios::app);
     if (reporteFile.is_open()) {
-        reporteFile << "-------------------------- NUEVO CLIENTE --------------------------\n";
+        reporteFile << "-------------------------- NUEVO EMPLEADO --------------------------\n";
         reporteFile << std::left << std::setw(15) << "ID"
                     << std::setw(25) << "Nombre"
                     << std::setw(20) << "NIT"
@@ -133,7 +133,7 @@ void Clientes::agregar(std::vector<Clientes>& lista, const std::string& usuarioA
         reporteFile.close();
     }
 
-    std::cout << "\n\t\tCliente registrado exitosamente con ID: " << nuevo.id << "\n";
+    std::cout << "\n\t\tEmpleado registrado exitosamente con ID: " << nuevo.id << "\n";
 
     // Limpiar buffer antes del system("pause") para evitar doble pausa
     std::cin.clear();
@@ -143,18 +143,18 @@ void Clientes::agregar(std::vector<Clientes>& lista, const std::string& usuarioA
 }
 
 /**
- * Muestra todos los clientes actualmente almacenados en la lista.
+ * Muestra todos los empleados actualmente almacenados en la lista.
  * Si la lista está vacía, muestra un mensaje apropiado.
  * @param lista Lista de clientes a mostrar.
  */
 void Clientes::mostrar(const std::vector<Clientes>& lista) {
     if (lista.empty()) {
-        std::cout << "\n----------------------------- CLIENTES -----------------------------\n";
-        std::cout << "\tNo hay clientes registrados.\n";
+        std::cout << "\n----------------------------- EMPLEADOS -----------------------------\n";
+        std::cout << "\tNo hay empleados registrados.\n";
         std::cout << "\tEl archivo puede estar vacío o no se cargo correctamente.\n";
         std::cout << "--------------------------------------------------------------------\n";
     } else {
-        std::cout << "\n----------------------------- LISTADO DE CLIENTES -----------------------------\n";
+        std::cout << "\n----------------------------- LISTADO DE EMPLEADOS -----------------------------\n";
         std::cout << std::left
                   << std::setw(10) << "ID"
                   << std::setw(30) << "Nombre completo"
@@ -195,12 +195,12 @@ void Clientes::modificar(std::vector<Clientes>& lista, const std::string& usuari
         [&idCliente](const Clientes& c) { return c.id == idCliente; });
 
     if (it == lista.end()) {
-        std::cout << "Cliente con ID '" << idCliente << "' no encontrado.\n";
+        std::cout << "Empleado con ID '" << idCliente << "' no encontrado.\n";
         system("pause");
         return;
     }
 
-    std::cout << "\n-------------------------- MODIFICAR CLIENTE --------------------------\n";
+    std::cout << "\n-------------------------- MODIFICAR EMPLEADO --------------------------\n";
     std::cout << std::left << std::setw(25) << "ID del cliente:" << idCliente << "\n";
     std::cout << "------------------------------------------------------------------------\n";
 
@@ -226,17 +226,17 @@ void Clientes::modificar(std::vector<Clientes>& lista, const std::string& usuari
 
     // Guardar cambios y registrar en bitácora
     guardarEnArchivo(lista);
-    bitacora::registrar(usuarioActual, "CLIENTES", "Cliente modificado - ID: " + idCliente);
+    bitacora::registrar(usuarioActual, "EMPLEADO", "Empleado modificado - ID: " + idCliente);
 
     std::cout << "\n-----------------------------\n";
-    std::cout << "¡Cliente modificado exitosamente!\n";
+    std::cout << "!Empleado modificado exitosamente!\n";
     std::cout << "-----------------------------\n";
 
     system("pause");
 }
 
 /**
- * Elimina un cliente de la lista dado su ID.
+ * Elimina un empleado de la lista dado su ID.
  * Guarda los cambios y registra la acción en bitácora.
  * @param lista Lista de clientes (modificable).
  * @param usuarioActual Usuario que realiza la eliminación.
@@ -246,21 +246,21 @@ void Clientes::eliminar(std::vector<Clientes>& lista, const std::string& usuario
     auto it = std::find_if(lista.begin(), lista.end(),
         [&id](const Clientes& c) { return c.id == id; });
 
-    std::cout << "\n--------------------------- ELIMINAR CLIENTE ---------------------------\n";
+    std::cout << "\n--------------------------- ELIMINAR EMPLEADO ---------------------------\n";
     std::cout << std::left << std::setw(25) << "ID a eliminar:" << id << "\n";
     std::cout << "------------------------------------------------------------------------\n";
 
     if (it != lista.end()) {
-        lista.erase(it); // Elimina el cliente de la lista
+        lista.erase(it); // Elimina el empleado de la lista
         guardarEnArchivo(lista); // Guarda la lista actualizada
-        bitacora::registrar(usuarioActual, "CLIENTES", "Cliente eliminado - ID: " + id);
+        bitacora::registrar(usuarioActual, "EMPLEADO", "Empleado eliminado - ID: " + id);
 
         std::cout << "\n-----------------------------\n";
-        std::cout << "¡Cliente eliminado exitosamente!\n";
+        std::cout << "¡Empleado eliminado exitosamente!\n";
         std::cout << "-----------------------------\n";
     } else {
         std::cout << "\n-----------------------------\n";
-        std::cout << "Cliente con ID '" << id << "' no encontrado.\n";
+        std::cout << "Empleado con ID '" << id << "' no encontrado.\n";
         std::cout << "-----------------------------\n";
     }
 
@@ -276,9 +276,9 @@ void Clientes::eliminar(std::vector<Clientes>& lista, const std::string& usuario
  * @param lista Lista actual de clientes.
  */
 void Clientes::guardarEnArchivo(const std::vector<Clientes>& lista) {
-    std::ofstream archivo("clientes.bin", std::ios::binary | std::ios::trunc);
+    std::ofstream archivo("Empleados.bin", std::ios::binary | std::ios::trunc);
     if (!archivo) {
-        std::cerr << "Error al abrir clientes.dat para escritura.\n";
+        std::cerr << "Error al abrir Empleados.bin para escritura.\n";
         return;
     }
 
@@ -320,9 +320,9 @@ void Clientes::guardarEnArchivo(const std::vector<Clientes>& lista) {
 void Clientes::cargarDesdeArchivo(std::vector<Clientes>& lista) {
     lista.clear();
 
-    std::ifstream archivo("clientes.bin", std::ios::binary);
+    std::ifstream archivo("Empleados.bin", std::ios::binary);
     if (!archivo) {
-        std::cerr << "Error al abrir clientes.dat para lectura.\n";
+        std::cerr << "Error al abrir Empleados.bit para lectura.\n";
         return;
     }
 
