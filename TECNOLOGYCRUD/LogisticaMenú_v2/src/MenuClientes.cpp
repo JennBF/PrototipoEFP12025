@@ -1,4 +1,4 @@
-//JENNIFER BARRIOS FLORES 9959-24-10016
+//JENNIFER BARRIOS 9959-24-10016
 // Inclusión de encabezados propios
 /**
  * @file MenuClientes.cpp
@@ -130,4 +130,3 @@ void MenuClientes::mostrar(vector<Clientes>& listaClientes, usuarios& usuarioAct
 
     } while (opcion != 5);
 }
-
